@@ -1,4 +1,5 @@
 <?php
+
 $this->load->view('templates/auth_header');
 $this->load->view('templates/system_header');
 $this->load->view('templates/system_sidebar');
