@@ -24,6 +24,7 @@
 	<link href="<?= base_url('assets/css/icons.min.css') ?>" rel="stylesheet" type="text/css" />
 	<!-- App Css-->
 	<link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-ui-text-2">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 	<link href="<?= base_url('assets/css/app.min.css') ?>" id="app-style" rel="stylesheet" type="text/css" />
 	
 </head>

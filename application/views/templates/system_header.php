@@ -43,7 +43,7 @@
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
                                         src="<?= base_url('assets/images/users.png') ?>" alt="Header Avatar">
-                                    <span class="d-none d-xl-inline-block ms-1">Patrick</span>
+                                    <span class="d-none d-xl-inline-block ms-1 text-capitalize"><?= $user->name ?></span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -68,12 +68,12 @@
                                     </span>
                                 </a>
 
-                                <a href="index.html" class="logo logo-light">
+                                <a href="index.html" class="logo logo-light ">
                                     <span class="logo-sm">
                                         <img src="<?= base_url('assets/images/logo-sm.png') ?>" alt="" height="20">
                                     </span>
-                                    <span class="logo-lg">
-                                        <img src="<?= base_url('assets/images/logo-light.png') ?>" alt="" height="19">
+                                    <span class="logo-lg ">
+                                        <img src="<?= base_url('assets/images/logo-light.jpeg') ?>" alt="" height="80">
                                     </span>
                                 </a>
                             </div>

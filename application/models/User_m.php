@@ -44,6 +44,7 @@ class User_m extends CI_Model
 
 		return $this->session->has_userdata(self::SESSION_KEY);
 	}
+
 	public function logout()
 	{
 		$this->session->unset_userdata(self::SESSION_KEY);
@@ -54,10 +55,24 @@ class User_m extends CI_Model
 		if (!$this->session->has_userdata(self::SESSION_KEY)) {
 			return null;
 		}
-
 		$user_id = $this->session->userdata(self::SESSION_KEY);
-		$query = $this->db->get_where($this->_table, ['id' => $user_id]);
-		return $query->row();
+		$user = $this->db->get_where($this->_table, ['id' => $user_id])->row();
+		$agency = $this->db->get_where('agencies', ['id' => $user->agency_id])->row();
+		if ( $agency ) {
+			return (object)[
+				'id' => $user->id,
+				'name' => $user->name,
+				'role' => $user->role,
+				'agency' => $agency->name,
+				'agency_id' => $user->agency_id,
+				'kode' => $agency->kode, 
+			];
+		}else{
+			return $user;
+		}
+		
 	}
+
+	
 	
 }

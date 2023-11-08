@@ -24,22 +24,28 @@
    
     <div class="account-pages my-5 pt-sm-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-5">
+			
+			<div class="row justify-content-center">
+				<div class="col-md-8 col-lg-6 col-xl-5">
+				<?php if(!empty($this->session->flashdata('failed'))){?>
+					<div class="alert alert-danger" role="alert">
+						<?= $this->session->flashdata('failed') ?>
+						</div>
+						<?php }?>
                     <div class="card overflow-hidden">
                         <div class="bg-login text-center">
                             <div class="bg-login-overlay"></div>
                             <div class="position-relative">
                                 <h5 class="text-white font-size-20">Welcome Back !</h5>
-                                <p class="text-white-50 mb-0">Sign in to continue to Recording Gender.</p>
-                                <a href="index.html" class="logo logo-admin mt-4">
-                                    <img src="<?= base_url('assets/images/logo-sm-dark.png') ?>" alt="" height="30">
-                                </a>
+                                <p class="text-white-50 mb-0">Sign in to continue to Sipanda.</p>
+                                <!-- <a href="index.html" class="logo logo-admin mt-4"> -->
+                                    <!-- <img src="<?= base_url('assets/images/logo-sm-dark.png') ?>" alt="" height="30"> -->
+                                <!-- </a> -->
                             </div>
                         </div>
                         <div class="card-body pt-5">
                             <div class="p-2">
-                                <form class="form-horizontal" action="" method="post">
+                                <form class="form-horizontal" action="<?= base_url('/auth/authenticate') ?>" method="post">
 
                                     <div class="mb-3">
                                         <label class="form-label" for="username">Username</label>
@@ -75,8 +81,8 @@
                     <div class="mt-5 text-center">
                        
                         <p>©
-                            <script>document.write(new Date().getFullYear())</script> Qovex. Crafted with <i
-                                class="mdi mdi-heart text-danger"></i> by Themesbrand
+                            <script>document.write(new Date().getFullYear())</script> Sipanda. Crafted with <i
+                                class="mdi mdi-heart text-danger"></i> by Sipanda
                         </p>
                     </div>
 

@@ -12,8 +12,12 @@ class Dashboard extends CI_Controller {
 	}
 	public function index()
 	{
+		$user = $this->user_m->current_user();
+		
 		$this->data['content'] = 'admin/dashboard/index';
 		$this->data['page'] = 'dashboard';
+		$this->data['user'] = $user;
+		$this->data['role'] = $user->role;
 		$this->data['title'] = 'Dashboard | Recording Gender'; 
 		$this->load->view('templates/main', $this->data);
 	}

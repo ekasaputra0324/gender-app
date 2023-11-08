@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'dashboard';
 $route['/data/pegawai/(:any)'] = 'datapegawai';
-$route['/gender-project/auth/login'] = '/gender-project/index.php/auth/login';
+$route['/show/detail/'] = 'verifikator/show/';
+$route['/auth/login'] = '/gender-project/index.php/auth/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

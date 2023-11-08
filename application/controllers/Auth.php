@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
 
-	public function login(){
+	public function authenticate(){
 		$this->load->model('user_m');
 		$this->load->library('form_validation');
 		
@@ -12,7 +12,7 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules($rules);
 
 		if($this->form_validation->run() == FALSE){
-			return $this->load->view('admin/login/index');
+			return redirect('auth/login'); 
 		}
 
 		$username = $this->input->post('username');
@@ -21,8 +21,11 @@ class Auth extends CI_Controller {
 		if($this->user_m->login($username, $password)){
 			redirect('/');
 		} else {
-			$this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan username dan passwrod benar!');
+			$this->session->set_flashdata('failed', 'Login Gagal, pastikan username dan passwrod benar!');
+			return redirect('auth/login');
 		}
+	}
+	public function login(){
 		$this->load->view('admin/login/index');
 	}
 	public function logout()

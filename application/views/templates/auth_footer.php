@@ -32,7 +32,13 @@
 	<script src="<?= base_url('assets/libs/table-edits/build/table-edits.min.js') ?>"></script>
 	<!-- Datatable init js -->
 	<script src="<?= base_url('assets/js/pages/datatables.init.js') ?>"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="<?= base_url('assets/js/app.js') ?>"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>  
+    <script src="<?= base_url('assets/js/core-app.js') ?>"></script>
+	
+	</script>
 
     </body>
 
