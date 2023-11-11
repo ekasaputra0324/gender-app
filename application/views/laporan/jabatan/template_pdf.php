@@ -1,3 +1,18 @@
+
+<?php
+function gender_count($type,$data)
+{
+	$total = 0;
+	if ($data) {
+		foreach ($data as $value) {
+			 // Ini bisa digunakan untuk debugging
+			$total += $value->{$type};
+		}
+	}
+	return $total;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +56,11 @@
                     <td><?= isset($pns_jabatan_struktural[2]->male) ? $pns_jabatan_struktural[2]->male : 0 ?></td>
                     <td><?= isset($pns_jabatan_struktural[2]->female) ? $pns_jabatan_struktural[2]->female : 0  ?></td>
                 </tr>
+				<tr>
+					<td colspan="2" style="text-align:center">Total:</td>
+					<td><?=  gender_count('male',$pns_jabatan_struktural) ?></td>
+					<td><?=  gender_count('female',$pns_jabatan_struktural) ?></td>
+				</tr>
             </tbody>
         </table>
 		<h3 class="text-center">Tabel 2.PNS Menurut Jabatan Fungsional</h3>
@@ -67,7 +87,11 @@
 					<td><?= isset($pns_jabatan_fungsional[1]->male) ? $pns_jabatan_fungsional[1]->male : 0 ?></td>
                     <td><?= isset($pns_jabatan_fungsional[1]->female) ? $pns_jabatan_fungsional[1]->female : 0  ?></td>
                 </tr>
-				
+				<tr>
+					<td colspan="2" style="text-align:center">Total:</td>
+					<td><?=  gender_count('male',$pns_jabatan_fungsional) ?></td>
+					<td><?=  gender_count('female',$pns_jabatan_fungsional) ?></td>
+				</tr>
             </tbody>
         </table>
 		<h3 class="text-center">Tabel 3.PNS Menurut Pangkat dan Golongan</h3>
@@ -106,7 +130,11 @@
                     <td><?= isset($pns_pangkat_golongan[3]->male) ? $pns_pangkat_golongan[3]->male : 0 ?></td>
                     <td><?= isset($pns_pangkat_golongan[3]->female) ? $pns_pangkat_golongan[3]->female : 0  ?></td>
                 </tr>
-				
+				<tr>
+					<td colspan="2" style="text-align:center">Total:</td>
+					<td><?=  gender_count('male',$pns_pangkat_golongan) ?></td>
+					<td><?=  gender_count('female',$pns_pangkat_golongan) ?></td>
+				</tr>
             </tbody>
         </table>
 		<br>
@@ -134,7 +162,11 @@
 					<td><?= isset($pns_jabatan_lainnya[1]->male) ? $pns_jabatan_lainnya[1]->male : 0 ?></td>
                     <td><?= isset($pns_jabatan_lainnya[1]->female) ? $pns_jabatan_lainnya[1]->female : 0  ?></td>
                 </tr>
-				
+				<tr>
+					<td colspan="2" style="text-align:center">Total:</td>
+					<td><?=  gender_count('male',$pns_jabatan_lainnya) ?></td>
+					<td><?=  gender_count('female',$pns_jabatan_lainnya) ?></td>
+				</tr>
             </tbody>
         </table>
 		<br>
@@ -157,10 +189,15 @@
 					<td><?= isset($pertimbangan_jabatan_dan_kepangkatan[0]->male) ? $pertimbangan_jabatan_dan_kepangkatan[0]->male : 0 ?></td>
                     <td><?= isset($pertimbangan_jabatan_dan_kepangkatan[0]->female) ? $pertimbangan_jabatan_dan_kepangkatan[0]->female : 0  ?></td>
                 </tr>
+				<tr>
+					<td colspan="2" style="text-align:center">Total:</td>
+					<td><?=  gender_count('male',$pertimbangan_jabatan_dan_kepangkatan) ?></td>
+					<td><?=  gender_count('female',$pertimbangan_jabatan_dan_kepangkatan) ?></td>
+				</tr>
             </tbody>
         </table>
 		
+		<p id="url" style="text-align: center;"><?= $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?></p>
     </div>
-	
 </body>
 </html>

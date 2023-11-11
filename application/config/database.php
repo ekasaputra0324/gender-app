@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'gender_project',
+	'username' => 'nunukankabgo_pinksipanda',
+	'password' => 'K0p1h1t4m;;',
+	'database' => 'nunukankabgo_pinksipanda23',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -114,6 +114,7 @@ $db['sepakat'] = array(
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
-	'save_queries' => TRUE
+	'save_queries' => TRUE,
+	'options' => array(PDO::ATTR_TIMEOUT => 5)
 );
 

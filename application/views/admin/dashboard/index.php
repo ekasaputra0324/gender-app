@@ -6,7 +6,7 @@
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item active">Welcome to Sipanda</li>
+                                        <li class="breadcrumb-item active">Selamat Datang di Pink Sipanda | Data Pilah Gender</li>
                                     </ol>
                                 </div>
 
@@ -21,7 +21,7 @@
                         <div class="">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Statistic Gender</h4>
+                                    <h4 class="card-title mb-4">Statistik Gender</h4>
 
                                     <div id="line-chart" class="apex-charts"></div>
                                 </div>

@@ -192,7 +192,7 @@ function getTahunVeri(){
 	var baseURL = base_url.split('/').slice(0, 3).join('/');
 	$.ajax({
 		type: "GET",
-		url: baseURL + '/gender-project/urusan/get_tahun/'.concat(kode_b),
+		url: baseURL + '/pinksipanda/urusan/get_tahun/'.concat(kode_b),
 		dataType: "JSON",
 		success: function (response) {
 			console.log(response);
@@ -218,7 +218,7 @@ function getBidang(){
 
 	$.ajax({
 		type: "GET",
-		url: baseURL + '/gender-project/urusan/get_bidang/'.concat(opd),
+		url: baseURL + '/pinksipanda/urusan/get_bidang/'.concat(opd),
 		dataType: "JSON",
 		success: function (response) {
 ;
@@ -287,10 +287,10 @@ function syncveri(e){
 	let kode_b = $('#bidang').val();
 	let tahun = $('#tahun').val();
 	let kode = $('#opd').val();
-	console.log(baseURL + '/gender-project/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode));
+	console.log(baseURL + '/pinksipanda/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode));
 	$.ajax({
 		type: "GET",
-		url: baseURL + '/gender-project/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode),
+		url: baseURL + '/pinksipanda/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode),
 		dataType: "JSON",
 		success: function (response) {
 			console.log(response);
@@ -332,10 +332,10 @@ function syncadmin(e){
 	let kode_b = $('#bidang').val();
 	let tahun = $('#tahun').val();
 	let kode = $('#opd').val();
-	console.log(baseURL + '/gender-project/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode));
+	console.log(baseURL + '/pinksipanda/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode));
 	$.ajax({
 		type: "GET",
-		url: baseURL + '/gender-project/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode),
+		url: baseURL + '/pinksipanda/urusan/async?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode),
 		dataType: "JSON",
 		success: function (response) {
 			console.log(response);
@@ -398,7 +398,7 @@ function updateUrusanAcc() {
    
 	$.ajax({
         type: "POST",
-        url: baseURL+'/gender-project/urusan/update_acc', 
+        url: baseURL+'/pinksipanda/urusan/update_acc', 
         data: {
             id: id,
         },
@@ -419,7 +419,7 @@ function cetakUrusan(e){
 	let kode_b = $('#bidang').val();
 	let tahun = $('#tahun').val();
 	let kode = $('#opd').val();
-	window.location.href = baseURL + '/gender-project/laporan/cetakUrusan?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode)
+	window.location.href = baseURL + '/pinksipanda/laporan/cetakUrusan?kode_b='.concat(kode_b) + '&tahun='.concat(tahun)+'&opd='.concat(kode)
 }
 
 $('.get-year').on('change', getTahun);

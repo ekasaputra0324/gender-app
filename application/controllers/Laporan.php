@@ -42,7 +42,7 @@ class Laporan extends CI_Controller
         $this->data['title'] = "Data Pegawai";
 		
         $this->data['status'] = $this->laporan_m->get_data('STATUS',$this->input->get('year'),$this->input->get('agency_id'));
-
+		
         $this->data['pns_jenjang_pendidikan'] = $this->laporan_m->get_data(strtoupper('pns_jenjang_pendidikan'),$this->input->get('year'),$this->input->get('agency_id'));
         $this->data['non_pns_jenjang_pendidikan'] = $this->laporan_m->get_data(strtoupper('non_pns_jenjang_pendidikan'),$this->input->get('year'),$this->input->get('agency_id'));
         $this->data['pns_disabilitas_jenjang_pendidikan'] = $this->laporan_m->get_data(strtoupper('pns_disabilitas_jenjang_pendidikan'),$this->input->get('year'),$this->input->get('agency_id'));
@@ -54,6 +54,7 @@ class Laporan extends CI_Controller
         $paper = 'A4';
         $orientation = "potrait";
         $html = $this->load->view('laporan/pegawai/template_pdf', $this->data, true);
+        //  $this->load->view('laporan/pegawai/template_pdf', $this->data);
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
 	}
 	public function cetakJabatan(){
@@ -69,6 +70,7 @@ class Laporan extends CI_Controller
         $paper = 'A4';
         $orientation = "potrait";
         $html = $this->load->view('laporan/jabatan/template_pdf', $this->data, true);
+		//  $this->load->view('laporan/jabatan/template_pdf', $this->data);
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
 	}
 	public function cetakUrusan(){

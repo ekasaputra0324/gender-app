@@ -24,7 +24,8 @@ class Verifikator extends CI_Controller {
 
 		$table = $param == 'pegawai' ? 'employees' : 'positions';
 		$user = $this->user_m->current_user();
-		
+		// var_dump($this->verifikator_m->get_data($table));
+		// die;
 		$this->data['content'] = "verifikator/master/index";
 		$this->data['page'] = 'verifikator';
 		$this->data['user'] = $user;

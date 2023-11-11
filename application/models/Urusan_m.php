@@ -6,6 +6,7 @@ class Urusan_m extends CI_Model
 
     public function __construct() {
         parent::__construct();
+        // set_time_limit(0);
         $this->db2 = $this->load->database('sepakat', TRUE);
     }
 

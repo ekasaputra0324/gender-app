@@ -5,7 +5,7 @@ class Verifikator_m extends CI_Model
 	public function get_data($table) {
 	$this->db->select('year, id, agency_id, type, is_acc, user_id');
     $this->db->from($table);
-    $this->db->group_by('year'); // Mengelompokkan berdasarkan tahun
+    $this->db->group_by('year, agency_id, type'); // Mengelompokkan berdasarkan tahun
     $query = $this->db->get();
     return $query->result();
 	}

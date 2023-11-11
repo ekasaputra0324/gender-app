@@ -37,7 +37,7 @@
 								<div class="mb-3">
 									<label for="" class="form-label">Tahun</label>
 									<select name="tahun" id="tahun" class="form-control" >
-										<option selected>-- Pilih Tahun --</option>	
+										<option selected>-- Pilih Tahn --</option>	
 									</select>
 								</div>
 							</div>
